@@ -3,7 +3,7 @@ const WebSocket = require("ws");
 
 // Fly.io will pass the port from process.env.PORT
 const PORT = process.env.PORT || 8080;
-const wss = new WebSocket.Server({ port: PORT });
+const wss = new WebSocket.Server({ port: PORT, host: "0.0.0.0" });
 
 wss.on("connection", (ws) => {
   console.log("New client connected!");
